@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNUTTUMSESİNİBİLE</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: darkslategrey;
+        }
+
+        .question-box {
+            border: 2px solid darkred;
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+        }
+
+            .question-box h2 {
+                margin-bottom: 20px;
+                color: white;
+            }
+
+            .question-box input[type="text"] {
+                width: 100%;
+                padding: 8px;
+                margin-bottom: 10px;
+                font-size: 16px;
+                box-sizing: border-box;
+                color: black;
+            }
+
+            .question-box button {
+                padding: 10px 20px;
+                font-size: 16px;
+                background-color: darkred;
+                color: white;
+                border: none;
+                cursor: pointer;
+            }
+
+                .question-box button:hover {
+                    background-color: orangered;
+                }
+
+        .audio-player, .audio-playerr {
+            display: none;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+            .audio-player button, .audio-playerr button {
+                padding: 5px 10px;
+                background-color: palevioletred;
+                color: white;
+                border: none;
+                cursor: pointer;
+                margin-top: 5px;
+            }
+
+                .audio-player button:hover, .audio-playerr button:hover {
+                    background-color: lightpink;
+                }
+
+        /* Sonuç kutusu */
+        .result-box {
+            display: none;
+            background-color: white;
+            border: 2px solid black;
+            padding: 20px;
+            width: 600px;
+            text-align: left;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            overflow: auto;
+        }
+
+            .result-box p {
+                font-size: 18px;
+                color: darkred;
+                margin: 0;
+            }
+
+        /* Ekstra mesaj kutusu */
+        .extra-message {
+            display: none;
+            background-color: lightblue;
+            border: 2px solid darkblue;
+            padding: 20px;
+            width: 600px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+            .extra-message h3 {
+                color: darkblue;
+            }
+
+            .extra-message ul {
+                list-style-type: none;
+                padding: 0;
+            }
+
+            .extra-message li {
+                font-size: 18px;
+                margin-bottom: 10px;
+            }
+
+            .extra-message a {
+                color: blue;
+                text-decoration: none;
+            }
+
+                .extra-message a:hover {
+                    text-decoration: underline;
+                }
+    </style>
+</head>
+<body>
+
+    <div class="question-box" id="question-box">
+        <h2 id="question">TC Numaranı Gir</h2>
+        <input type="text" id="answer" placeholder="Cevabınızı girin">
+        <button onclick="checkAnswer()">Cevapla</button>
+
+        <!-- 4. sorudan sonra ses oynatma -->
+        <div class="audio-player" id="audio-player">
+            <audio id="audio" src="kayit2.mp3" type="audio/mp3"></audio>
+            <button onclick="playAudio()">Oynat</button>
+        </div>
+
+        <!-- 1. sorudan sonra ses oynatma -->
+        <div class="audio-playerr" id="audio-playerr">
+            <audio id="audioo" src="kayit3.mp3" type="audio/mp3"></audio>
+            <button onclick="playAudioo()">Oynat</button>
+        </div>
+    </div>
+
+    <!-- Sadece metin kutusu -->
+    <div class="result-box" id="result-box">
+        <p>
+            Selam kuzuu,<br><br>
+            Umarım iyisindir ve hayatın gittikçe güzelleşiyordur. Bu doğrusal grafiği durdurmak istemedim, yanlış anlama. Ancak kulaklık ne alaka demişsindir diye bir not bırakmak istedim. Çanta olayı iptal olunca bunu alayım dedim, çünkü beraberken sana çok yakışıyordu; hoşuna gider umarım.<br><br>
+            Sen yanımda ol ya da olma, hep mutlu ol. Bunu hak eden nadir insanlardan birisin. Seni deli gibi özlüyorum ve çok seviyorum, ama çok korkuyorum. Bunları yaşatmak istemezdim; özür dilerim.<br><br>
+            Bazen beraber olsak her şey çok güzel olacak gibi, bazen de olmayacakmış gibi hissediyorum. Ne yapacağımı bilmiyorum, sadece seni daha fazla üzmek istemiyorum. Çünkü bu hayatta en değerli, en güzel şey sensin. İleride ne olur bilemiyorum, seni çok özlüyorum. İnşallah bir gün herhangi bir yerde yine... Kendine iyi bak, güzel kızım.
+        </p>
+    </div>
+
+    <!-- Ekstra mesaj kutusu -->
+    <div class="extra-message" id="extra-message">
+        <h3>ෆෆෆෆෆෆෆෆෆෆෆෆෆෆෆෆෆෆෆෆෆෆෆෆෆෆෆෆෆෆෆෆෆෆෆෆ</h3>
+        <ul>
+            <li><a href="https://www.youtube.com/watch?v=qBhhkRS-R3o&list=RDqBhhkRS-R3o&start_radio=1" target="_blank">Seni</a></li>
+            <li><a href="https://www.youtube.com/watch?v=cI1PoaB51Fk" target="_blank">Her</a></li>
+            <li><a href="https://www.youtube.com/watch?v=iAiNlu3p47M" target="_blank">Zaman</a></li>
+            <li><a href="https://www.youtube.com/watch?v=QmzcjZ5dais" target="_blank">Çok</a></li>
+            <li><a href="https://www.youtube.com/watch?v=yc5Z9cpIvfc" target="_blank">Sevicem</a></li>
+        </ul>
+    </div>
+
+    <script>
+        const questions = [
+            { question: "TC Numaranı Gir", answer: "19340894682" },
+            { question: "En iyi kurgusal çift?", answer: "batman ve catwoman" },
+            { question: "Devamını Getir Afiyet olsun...", answer: "size de" },
+            { question: "Devamını Getir Çok Güldüm...", answer: "bahçeye diktiler" },
+            { question: "SENİ HALA ÇOK...?", answer: "seviyorum" }
+        ];
+
+        let currentQuestionIndex = 0;
+
+        // Sayfa yüklendiğinde mesaj kutusunu göstermek için
+        window.onload = function () {
+            alert("HELLO <3 her cevaptan sonra boşluk bırakma! bir soruda 've' kullanmalısın.");
+        };
+
+        function checkAnswer() {
+            const userAnswer = document.getElementById("answer").value.trim();
+            if (userAnswer.toLowerCase() === questions[currentQuestionIndex].answer.toLowerCase()) {
+                currentQuestionIndex++;
+                if (currentQuestionIndex < questions.length) {
+                    nextQuestion();
+                } else {
+                    showResult(); // 5 soruyu doğru bildiğinde sonuç kutusunu göster
+                }
+            } else {
+                alert("Yanlış cevap, lütfen tekrar deneyin.");
+            }
+        }
+
+        function nextQuestion() {
+            document.getElementById("question").textContent = questions[currentQuestionIndex].question;
+            document.getElementById("answer").value = "";
+
+            // 1. sorudan sonra ses çalmak için
+            if (currentQuestionIndex === 1) {
+                document.getElementById("audio-playerr").style.display = "block";
+            } else {
+                document.getElementById("audio-playerr").style.display = "none";
+            }
+
+            // 4. sorudan sonra ses çalmak için
+            if (currentQuestionIndex === 4) {
+                document.getElementById("audio-player").style.display = "block";
+            } else {
+                document.getElementById("audio-player").style.display = "none";
+            }
+        }
+
+        function showResult() {
+            document.getElementById("question-box").style.display = "none"; // Soru kutusunu gizle
+            document.getElementById("result-box").style.display = "block"; // Sonuç kutusunu göster
+            document.getElementById("extra-message").style.display = "block"; // Ekstra mesaj kutusunu göster
+        }
+
+        function playAudio() {
+            document.getElementById("audio").play();
+        }
+
+        function playAudioo() {
+            document.getElementById("audioo").play();
+        }
+    </script>
+</body>
+</html>
