@@ -1,0 +1,121 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orta Kısım Kutusu</title>
+    <style>
+        body {
+            background-color: darksalmon; /* Arka planı kırmızı yapar */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            width: 80%;
+            height: 80vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 20px;
+            border: 2px solid #000;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .box {
+            border: 1px solid #ccc;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .top-left {
+            background-color: lightcoral; /* Arka plan rengini değiştirdik */
+        }
+
+        .top-right img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .bottom-left a {
+            display: block;
+            margin: 5px 0;
+            color: blue;
+            text-decoration: none;
+        }
+
+            .bottom-left a:hover {
+                text-decoration: underline;
+            }
+
+        .bottom-right audio {
+            display: block;
+            margin: 10px 0;
+        }
+
+        a {
+            font-family: Candara, sans-serif;
+            font-size: 25px;
+            color: blue;
+            text-decoration: none;
+        }
+
+            a:hover {
+                text-decoration: underline;
+            }
+
+        p {
+            font-size: 25px;
+            font-family: Candara, Times, serif;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="box top-left">
+            <h2>SENİ</h2>
+            <p><3<3<3<3<3<3<3<3<3<3<3<3<3<3<3<3<3<3<3<3<3<3<3<3<3<3<3<3<3<3<3<3<3<3<3<3<3</p>
+        </div>
+        <div class="box top-right">
+            <h2>ÇOK</h2>
+            <img src="~/tonntonn.jpeg" alt="Fotoğraf">
+        </div>
+        <div class="box bottom-left">
+            <h2>AMA ÇOOK</h2>
+
+            <p>
+                <a href="https://www.youtube.com/watch?v=nnQZuRGrK7o" style="display: inline;">Çok</a>
+                <a href="https://www.youtube.com/watch?v=_Qr8ebALcvE" style="display: inline;">Değiştim</a>
+                <a href="https://www.youtube.com/watch?v=MsULSccpXMA" style="display: inline;">Mihriban</a>
+            </p>
+            <p>
+                <a href="https://www.youtube.com/watch?v=oIOjbiW26Zg" style="display: inline;">Sandığından</a>
+                <a href="https://www.youtube.com/watch?v=QGPT48Ofw_A" style="display: inline;">Kirli</a>
+                <a href="https://www.youtube.com/watch?v=gWLGGiOh1IQ" style="display: inline;">Şam</a>
+            </p>
+        </div>
+        <div class="box bottom-right">
+            <h2>ÖZLEDİMM</h2>
+            <audio controls>
+                <source src="~/kayit2.mp3" type="audio/mpeg">
+                Tarayıcınız audio etiketini desteklemiyor.
+            </audio>
+            <audio controls>
+                <source src="~/kayit3.mp3" type="audio/mpeg">
+                Tarayıcınız audio etiketini desteklemiyor.
+            </audio>
+            <audio controls>
+                <source src="~/Gym Class Heroes - Make me your radio (Stereo Hearts) (Lyrics).mp3" type="audio/mpeg">
+                Tarayıcınız audio etiketini desteklemiyor.
+            </audio>
+        </div>
+    </div>
+
+</body>
+</html>
